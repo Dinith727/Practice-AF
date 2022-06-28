@@ -18,7 +18,10 @@ const addCourse = async (ctx) => {
 };
 const getCourses = async (ctx) =>{
     try{
-        const courses = await Course.find({});
+        const courses = await Course.find().populate({
+            path : "students",
+            select : "name nic age"
+        });
         return (ctx.body = courses);
     }catch(error){
         return (ctx.body = {message: error.message});
