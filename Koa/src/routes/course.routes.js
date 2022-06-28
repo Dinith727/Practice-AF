@@ -6,7 +6,6 @@ router.post("/add", addCourse);
 router.delete("/:id",DeleteCourse);
 router.put("/:id",updateCourses );
 router.get("/", getCourses);
-DeleteCourse
 
 
 module.exports = router;
